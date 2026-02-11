@@ -171,13 +171,15 @@ class Query:
 class Mutation:
     # Register (US-4.2)
     @strawberry.mutation
-    def register(self, username: str, email: str, password: str) -> AuthPayload:
+    def register(self, username: str, email: str, password: str ,role :str) -> AuthPayload:
         if not username:
             raise Exception("username required")
         if not email:
             raise Exception("email required")
         if not password or len(password) < 6:
             raise Exception("password required (min 6)")
+        if role not in ["USER", "ADMIN"]:
+            raise Exception("role must be USER or ADMIN")
 
         db: Session = SessionLocal()
         try:
@@ -331,7 +333,7 @@ class Mutation:
 
             db.delete(p)
             db.commit()
-            return True
+            return True 
         finally:
             db.close()
 
