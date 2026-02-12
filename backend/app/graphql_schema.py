@@ -13,9 +13,7 @@ from app.security import hash_password, verify_password
 from app.jwt_utils import create_access_token, decode_token
 
 
-# -------------------------
-# Helpers
-# -------------------------
+
 def get_token_payload(info: Info) -> dict:
     request = info.context["request"]
     auth = request.headers.get("authorization")
@@ -24,7 +22,7 @@ def get_token_payload(info: Info) -> dict:
         raise Exception("Unauthorized")
 
     token = auth.split(" ", 1)[1].strip()
-    return decode_token(token)  # doit lever "Invalid token" si token invalide
+    return decode_token(token)  
 
 
 def get_current_user_id(info: Info) -> int:
@@ -53,9 +51,7 @@ def to_role_str(role_obj) -> str:
     return role_obj.value if hasattr(role_obj, "value") else str(role_obj)
 
 
-# -------------------------
-# GraphQL Types
-# -------------------------
+
 @strawberry.type
 class UserType:
     id: int
@@ -93,9 +89,7 @@ class ProductPayload:
     product: ProductType
 
 
-# -------------------------
-# Query
-# -------------------------
+
 @strawberry.type
 class Query:
     @strawberry.field
@@ -117,10 +111,10 @@ class Query:
         finally:
             db.close()
 
-    # US-5.1
+   
     @strawberry.field
     def products(self, info: Info) -> List[ProductType]:
-        _ = get_current_user_id(info)  # auth obligatoire
+        _ = get_current_user_id(info)  
 
         db: Session = SessionLocal()
         try:
@@ -140,7 +134,7 @@ class Query:
         finally:
             db.close()
 
-    # US-5.2
+   
     @strawberry.field(name="productById")
     def product_by_id(self, info: Info, id: int) -> ProductType:
         _ = get_current_user_id(info)
@@ -164,12 +158,10 @@ class Query:
             db.close()
 
 
-# -------------------------
-# Mutation
-# -------------------------
+
 @strawberry.type
 class Mutation:
-    # Register (US-4.2)
+    
     @strawberry.mutation
     def register(self, username: str, email: str, password: str ,role :str) -> AuthPayload:
         if not username:
@@ -216,7 +208,7 @@ class Mutation:
         finally:
             db.close()
 
-    # Login (US-4.2)
+    
     @strawberry.mutation
     def login(self, username: str, password: str) -> AuthPayload:
         db: Session = SessionLocal()
@@ -240,12 +232,12 @@ class Mutation:
         finally:
             db.close()
 
-    # US-5.3 Create product
+    
     @strawberry.mutation(name="createProduct")
     def create_product(self, info: Info, input: ProductInput) -> ProductPayload:
         _ = get_current_user_id(info)
 
-        # validations
+      
         if not input.name or len(input.name.strip()) < 2:
             raise Exception("Validation error: name")
         if input.price < 0:
@@ -279,7 +271,7 @@ class Mutation:
         finally:
             db.close()
 
-    # US-5.4 Update product
+    
     @strawberry.mutation(name="updateProduct")
     def update_product(self, info: Info, id: int, input: ProductInput) -> ProductPayload:
         _ = get_current_user_id(info)
@@ -319,7 +311,7 @@ class Mutation:
         finally:
             db.close()
 
-    # US-5.5 Delete product (ADMIN only)
+    
     @strawberry.mutation(name="deleteProduct")
     def delete_product(self, info: Info, id: int) -> bool:
         _ = get_current_user_id(info)

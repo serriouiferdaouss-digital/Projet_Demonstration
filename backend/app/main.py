@@ -14,7 +14,7 @@ def health():
 def startup_event():
     test_db_connection()
 
-# ✅ Ajout : context_getter pour récupérer les headers dans GraphQL
+
 async def get_context(request: Request):
     return {"request": request}
 
