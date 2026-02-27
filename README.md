@@ -1,11 +1,11 @@
-# 🚀 FireHIS Demo Project — FastAPI (GraphQL) + Angular
+# FireHIS Demo Project — FastAPI (GraphQL) + Angular
 
 > Full-stack application built as part of the **FireHIS v0.1.0** demonstration project.  
 > A production-ready skeleton: authentication, role-based access, product CRUD, dark mode, and i18n — all wired together.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 1. [Architecture Overview](#-architecture-overview)
 2. [Tech Stack](#-tech-stack)
@@ -23,7 +23,7 @@
 
 ---
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -47,7 +47,7 @@
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -88,7 +88,7 @@
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Projet_Demonstration/
@@ -144,7 +144,7 @@ Projet_Demonstration/
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Make sure the following are installed on your machine:
 
@@ -159,7 +159,7 @@ Make sure the following are installed on your machine:
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 ### `backend/.env`
 
@@ -182,11 +182,11 @@ JWT_EXPIRE_MINUTES=60000
 | `JWT_ALGORITHM` | JWT signature algorithm | `HS256` |
 | `JWT_EXPIRE_MINUTES` | Token validity in minutes | `60000` (~41 days) |
 
-> ⚠️ The backend will **refuse to start** if `JWT_SECRET` or `DATABASE_URL` are missing.
+> The backend will **refuse to start** if `JWT_SECRET` or `DATABASE_URL` are missing.
 
 ---
 
-## ▶️ Running the Project
+## Running the Project
 
 ### Step 1 — Start the Database (Docker)
 
@@ -274,7 +274,7 @@ The app will be available at:
 
 ---
 
-## 🐍 Backend — Deep Dive
+## Backend — Deep Dive
 
 ### Application Startup (`app/main.py`)
 
@@ -345,7 +345,7 @@ Token is read from the `Authorization: Bearer <token>` request header inside Gra
 
 ---
 
-## 🅰️ Frontend — Deep Dive
+## Frontend — Deep Dive
 
 ### Application Bootstrap
 
@@ -460,7 +460,7 @@ All methods return **Observables** and use `fetchPolicy: 'no-cache'`.
 
 ---
 
-## 📡 GraphQL API Reference
+## GraphQL API Reference
 
 Playground: **http://localhost:8000/graphql**
 
@@ -623,7 +623,7 @@ mutation {
 
 ---
 
-## 🗃 Database & Migrations
+## Database & Migrations
 
 The project uses **Alembic** for schema versioning.
 
@@ -655,7 +655,7 @@ alembic current
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Backend Tests
 
@@ -691,7 +691,7 @@ Test configuration is in `jest.config.js` using `jest-preset-angular`.
 
 ---
 
-## ✔️ Definition of Done
+## Definition of Done
 
 A feature is considered **DONE** when all of the following are true:
 
@@ -705,32 +705,32 @@ A feature is considered **DONE** when all of the following are true:
 
 ---
 
-## 🗺 Roadmap / Next Steps
+## Roadmap / Next Steps
 
 | User Story | Status |
 |---|---|
-| US-1: Project setup (FastAPI, Angular, Docker) | ✅ Done |
-| US-2: PostgreSQL connection via SQLAlchemy | ✅ Done |
-| US-3: User model + password hashing | ✅ Done |
-| US-4: JWT authentication | ✅ Done |
-| US-5: GraphQL endpoint (Strawberry) | ✅ Done |
-| US-6: `register` + `login` mutations | ✅ Done |
-| US-7: `me` query (authenticated) | ✅ Done |
-| US-8: Product CRUD (backend) | ✅ Done |
-| US-9: Role-based delete (ADMIN only) | ✅ Done |
-| US-9.1: Angular setup (Material, Tailwind, Apollo) | ✅ Done |
-| US-9.2: Login page + AuthGuard | ✅ Done |
-| US-9.3: Main layout (Toolbar + Sidenav) | ✅ Done |
-| US-9.4: Theme & language persistence | ✅ Done |
-| US-10: Product CRUD Frontend (list + create + edit + delete) | ✅ Done |
-| US-11: Unit tests coverage | 🔄 In progress |
-| US-12: E2E tests (Cypress / Playwright) | ⬜ Planned |
-| US-13: Docker image for backend | ⬜ Planned |
-| US-14: CI/CD pipeline | ⬜ Planned |
+| US-1: Project setup (FastAPI, Angular, Docker) | Done |
+| US-2: PostgreSQL connection via SQLAlchemy | Done |
+| US-3: User model + password hashing | Done |
+| US-4: JWT authentication | Done |
+| US-5: GraphQL endpoint (Strawberry) | Done |
+| US-6: `register` + `login` mutations | Done |
+| US-7: `me` query (authenticated) | Done |
+| US-8: Product CRUD (backend) | Done |
+| US-9: Role-based delete (ADMIN only) | Done |
+| US-9.1: Angular setup (Material, Tailwind, Apollo) | Done |
+| US-9.2: Login page + AuthGuard | Done |
+| US-9.3: Main layout (Toolbar + Sidenav) | Done |
+| US-9.4: Theme & language persistence | Done |
+| US-10: Product CRUD Frontend (list + create + edit + delete) | Done |
+| US-11: Unit tests coverage | In progress |
+| US-12: E2E tests (Cypress / Playwright) | Planned |
+| US-13: Docker image for backend | Planned |
+| US-14: CI/CD pipeline | Planned |
 
 ---
 
-## 👤 Author
+## Author
 
 **Serrioui Ferdaouss**  
 Project: FireHIS v0.1.0 — Demo Stack  
@@ -738,4 +738,4 @@ Date: February 2026
 
 ---
 
-*Built with ❤️ using FastAPI, Strawberry GraphQL, Angular 21, and PostgreSQL.*
+*Built with FastAPI, Strawberry GraphQL, Angular 21, and PostgreSQL.*
