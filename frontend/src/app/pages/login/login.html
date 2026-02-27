@@ -1,41 +1,41 @@
 <div class="page">
   <div class="card">
-    <h2>Connexion</h2>
-    <p class="sub">Connecte-toi pour accéder à l’app</p>
+    <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
+    <p class="sub">{{ 'LOGIN.SUBTITLE' | translate }}</p>
 
     <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off">
       <div class="field">
-        <label>Nom d’utilisateur</label>
+        <label>{{ 'LOGIN.USERNAME' | translate }}</label>
         <input
           type="text"
           formControlName="username"
-          placeholder="Entrer votre username"
+          [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate"
           autocomplete="off"
           spellcheck="false"
         />
         <p *ngIf="form.get('username')?.touched && form.get('username')?.invalid" class="err">
-          Nom d'utilisateur obligatoire
+          {{ 'LOGIN.USERNAME_REQUIRED' | translate }}
         </p>
       </div>
 
       <div class="field">
-        <label>Mot de passe</label>
+        <label>{{ 'LOGIN.PASSWORD' | translate }}</label>
         <input
           type="password"
           formControlName="password"
-          placeholder="Entrer votre mot de passe"
+          [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
           autocomplete="new-password"
         />
         <p *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="err">
-          Mot de passe obligatoire
+          {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
         </p>
       </div>
 
       <button type="submit" [disabled]="form.invalid || loading">
-        {{ loading ? 'Connexion...' : 'Connexion' }}
+        {{ loading ? ('LOGIN.LOADING' | translate) : ('LOGIN.SUBMIT' | translate) }}
       </button>
 
-      <p *ngIf="errorMsg" class="errCenter">{{ errorMsg }}</p>
+      <p *ngIf="errorMsg" class="errCenter">{{ errorMsg | translate }}</p>
     </form>
   </div>
 </div>

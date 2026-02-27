@@ -187,7 +187,7 @@ class Mutation:
                 username=username,
                 email=email,
                 password_hash=hashed_password,
-                role="USER",
+                role=role,
             )
             db.add(user)
             db.commit()

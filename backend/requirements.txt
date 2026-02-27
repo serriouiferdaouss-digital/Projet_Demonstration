@@ -4,4 +4,7 @@ sqlalchemy
 psycopg2-binary
 python-dotenv
 passlib[bcrypt]
-
+strawberry-graphql[fastapi]
+python-jose[cryptography]
+pytest
+pytest-asyncio

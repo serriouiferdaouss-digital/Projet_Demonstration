@@ -1,0 +1,70 @@
+{
+  "APP": {
+    "TITLE": "Projet de démonstration"
+  },
+  "MENU": {
+    "PRODUCTS": "Produits",
+    "THEME": "Thème",
+    "LANGUAGE": "Langue",
+    "LOGOUT": "Déconnexion"
+  },
+  "LOGIN": {
+    "TITLE": "Connexion",
+    "SUBTITLE": "Connecte-toi pour accéder à l'app",
+    "USERNAME": "Nom d'utilisateur",
+    "PASSWORD": "Mot de passe",
+    "SUBMIT": "Connexion",
+    "LOADING": "Connexion...",
+    "USERNAME_PLACEHOLDER": "Entrer votre nom d'utilisateur",
+    "PASSWORD_PLACEHOLDER": "Entrer votre mot de passe",
+    "USERNAME_REQUIRED": "Nom d'utilisateur obligatoire",
+    "PASSWORD_REQUIRED": "Mot de passe obligatoire",
+    "INVALID_CREDENTIALS": "Identifiants invalides",
+    "SERVER_UNREACHABLE": "Serveur injoignable",
+    "TOKEN_NOT_RECEIVED": "Token non reçu"
+  },
+  "PRODUCTS": {
+    "TITLE": "Produits",
+    "CREATE": "Créer produit",
+    "NAME": "Nom",
+    "PRICE": "Prix",
+    "QUANTITY": "Quantité",
+    "ACTIONS": "Actions",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer"
+  },
+  "EDIT": {
+    "TITLE": "Modifier produit",
+    "BACK": "Retour",
+    "SAVE": "Enregistrer"
+  },
+  "CREATE": {
+    "TITLE": "Créer produit"
+  },
+  "DIALOG": {
+    "CONFIRM_DELETE_TITLE": "Confirmer suppression",
+    "CONFIRM_DELETE_MSG": "Êtes-vous sûr de vouloir supprimer ce produit ?",
+    "CANCEL": "Annuler",
+    "DELETE": "Supprimer"
+  },
+  "SNACK": {
+    "LOAD_PRODUCTS_FAIL": "Échec de chargement des produits",
+    "PRODUCT_CREATED": "Produit créé avec succès",
+    "CREATE_FAILED": "Échec de création du produit",
+    "PRODUCT_UPDATED": "Produit mis à jour avec succès",
+    "UPDATE_FAILED": "Échec de mise à jour",
+    "PRODUCT_DELETED": "Produit supprimé",
+    "DELETE_FAILED": "Échec de suppression",
+    "FORBIDDEN_DELETE": "Vous n’avez pas le droit de supprimer des produits",
+    "PRODUCT_NOT_FOUND": "Produit introuvable"
+  },
+  "COMMON": {
+    "DESCRIPTION": "Description",
+    "BACK": "Retour",
+    "CREATE": "Créer",
+    "REQUIRED": "Obligatoire",
+    "MIN_2": "Min 2 caractères",
+    "PRICE_MIN": "Prix ≥ 0",
+    "QTY_MIN": "Quantité ≥ 0"
+ }
+}

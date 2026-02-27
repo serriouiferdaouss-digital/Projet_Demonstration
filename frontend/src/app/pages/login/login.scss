@@ -81,3 +81,12 @@ button {
   color: #dc2626;
   font-size: 13px;
 }
+
+input, .mat-mdc-input-element {
+  color: #111 !important;
+  caret-color: #111 !important;
+}
+
+::placeholder {
+  color: rgba(0,0,0,0.45) !important;
+}

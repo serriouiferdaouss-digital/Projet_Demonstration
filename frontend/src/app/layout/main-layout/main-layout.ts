@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nService } from '../../i18n.service';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,16 +23,18 @@ import { MatButtonModule } from '@angular/material/button';
     MatDividerModule,
     MatSlideToggleModule,
     MatButtonModule,
+    TranslateModule,
   ],
   templateUrl: './main-layout.html',
   styleUrls: ['./main-layout.scss'],
 })
 export class MainLayoutComponent {
-  // simple state (we keep it basic for US-9.1)
   theme: 'light' | 'dark' = (localStorage.getItem('theme') as any) || 'light';
-  lang: 'EN' | 'FR' = (localStorage.getItem('lang') as any) || 'EN';
 
-  constructor(private router: Router) {
+  lang: 'EN' | 'FR';
+
+  constructor(private router: Router, private i18n: I18nService) {
+    this.lang = this.i18n.getUiLang();
     this.applyTheme();
   }
 
@@ -46,7 +50,7 @@ export class MainLayoutComponent {
 
   toggleLanguage() {
     this.lang = this.lang === 'EN' ? 'FR' : 'EN';
-    localStorage.setItem('lang', this.lang);
+    this.i18n.setUiLang(this.lang); 
   }
 
   logout() {

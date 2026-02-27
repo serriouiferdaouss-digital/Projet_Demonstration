@@ -1,0 +1,50 @@
+<div class="p">
+  <div class="top">
+    <h2>{{ 'CREATE.TITLE' | translate }}</h2>
+    <button mat-stroked-button type="button" (click)="back()">
+      {{ 'EDIT.BACK' | translate }}
+    </button>
+  </div>
+
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>{{ 'PRODUCTS.NAME' | translate }}</mat-label>
+      <input matInput formControlName="name" />
+
+      <mat-error *ngIf="form.get('name')?.hasError('required')">
+        {{ 'COMMON.REQUIRED' | translate }}
+      </mat-error>
+
+      <mat-error *ngIf="form.get('name')?.hasError('minlength')">
+        {{ 'COMMON.MIN_2' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>{{ 'COMMON.DESCRIPTION' | translate }}</mat-label>
+      <input matInput formControlName="description" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>{{ 'PRODUCTS.PRICE' | translate }}</mat-label>
+      <input matInput type="number" formControlName="price" />
+      <mat-error *ngIf="form.get('price')?.hasError('min')">
+        {{ 'COMMON.PRICE_MIN' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>{{ 'PRODUCTS.QUANTITY' | translate }}</mat-label>
+      <input matInput type="number" formControlName="quantity" />
+      <mat-error *ngIf="form.get('quantity')?.hasError('min')">
+        {{ 'COMMON.QTY_MIN' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+      {{ 'COMMON.CREATE' | translate }}
+    </button>
+  </form>
+</div>

@@ -1,0 +1,70 @@
+{
+  "APP": {
+    "TITLE": "Demo Project"
+  },
+  "MENU": {
+    "PRODUCTS": "Products",
+    "THEME": "Theme",
+    "LANGUAGE": "Language",
+    "LOGOUT": "Logout"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "SUBTITLE": "Log in to access the app",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "SUBMIT": "Login",
+    "LOADING": "Logging in...",
+    "USERNAME_PLACEHOLDER": "Enter your username",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "USERNAME_REQUIRED": "Username is required",
+    "PASSWORD_REQUIRED": "Password is required",
+    "INVALID_CREDENTIALS": "Invalid credentials",
+    "SERVER_UNREACHABLE": "Server unreachable",
+    "TOKEN_NOT_RECEIVED": "Token not received"
+  },
+  "PRODUCTS": {
+    "TITLE": "Products",
+    "CREATE": "Create product",
+    "NAME": "Name",
+    "PRICE": "Price",
+    "QUANTITY": "Quantity",
+    "ACTIONS": "Actions",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "EDIT": {
+    "TITLE": "Edit product",
+    "BACK": "Back",
+    "SAVE": "Save"
+  },
+  "CREATE": {
+    "TITLE": "Create product"
+  },
+  "DIALOG": {
+    "CONFIRM_DELETE_TITLE": "Confirm deletion",
+    "CONFIRM_DELETE_MSG": "Are you sure you want to delete this product?",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete"
+  },
+  "SNACK": {
+    "LOAD_PRODUCTS_FAIL": "Failed to load products",
+    "PRODUCT_CREATED": "Product created successfully",
+    "CREATE_FAILED": "Create product failed",
+    "PRODUCT_UPDATED": "Product updated successfully",
+    "UPDATE_FAILED": "Update failed",
+    "PRODUCT_DELETED": "Product deleted",
+    "DELETE_FAILED": "Delete failed",
+    "FORBIDDEN_DELETE": "You are not allowed to delete products",
+    "PRODUCT_NOT_FOUND": "Product not found"
+  },
+  "COMMON": {
+    "DESCRIPTION": "Description",
+    "BACK": "Back",
+    "CREATE": "Create",
+    "REQUIRED": "Required",
+    "MIN_2": "Min 2 characters",
+    "PRICE_MIN": "Price ≥ 0",
+    "QTY_MIN": "Quantity ≥ 0"
+  }
+}

@@ -1,12 +1,13 @@
 .p {
   padding: 24px;
 }
-button {
-  margin-top: 12px;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 10px;
-  background: #2563eb;
-  color: white;
-  cursor: pointer;
+.full {
+  width: 100%;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
 }

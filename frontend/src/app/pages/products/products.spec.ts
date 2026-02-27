@@ -1,20 +1,34 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ApolloTestingModule } from 'apollo-angular/testing';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { of } from 'rxjs';
 
-import { Products } from './products';
+import { ProductsComponent } from './products';
 
-describe('Products', () => {
-  let component: Products;
-  let fixture: ComponentFixture<Products>;
+class FakeLoader implements TranslateLoader {
+  getTranslation() {
+    return of({});
+  }
+}
+
+describe('ProductsComponent', () => {
+  let component: ProductsComponent;
+  let fixture: ComponentFixture<ProductsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Products]
-    })
-    .compileComponents();
+      imports: [
+        ApolloTestingModule,
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: FakeLoader },
+        }),
+        ProductsComponent,
+      ],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(Products);
+    fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
